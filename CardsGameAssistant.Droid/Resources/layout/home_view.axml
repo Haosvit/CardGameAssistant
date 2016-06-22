@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+<!-- Players -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            local:MvxBind="Text Players[0]" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            local:MvxBind="Text Players[1]" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            local:MvxBind="Text Players[2]" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            local:MvxBind="Text Players[3]" />
+    </LinearLayout>
+<!-- Total scores -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        local:MvxBind="Visibility IsFinish, Converter=BoolToVisibility">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            local:MvxBind="Text Totals[0]" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            local:MvxBind="Text Totals[1]" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            local:MvxBind="Text Totals[2]" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            local:MvxBind="Text Totals[3]" />
+    </LinearLayout>
+<!-- Commands -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/SmallButtonHeight"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ADD ONE"
+            local:MvxBind="Click AddOneCommand" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/SmallButtonHeight"
+            android:layout_weight="1"
+            android:gravity="center"
+            local:MvxBind="Text FinishOrNewGame; Click FinishCommand" />
+    </LinearLayout>
+<!-- Scores list-->
+    <Mvx.MvxListView
+        android:id="@+id/lv_matches"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        local:MvxBind="ItemsSource MatchScoresItemViewModels"
+        local:MvxItemTemplate="@layout/scores_item_view" />
+</LinearLayout>

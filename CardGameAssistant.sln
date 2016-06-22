@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGameAssistant.Core", "CardGameAssistant.Core\CardGameAssistant.Core.csproj", "{07ABAF4B-4840-4DB0-99A0-1516365640AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsGameAssistant.Droid", "CardsGameAssistant.Droid\CardsGameAssistant.Droid.csproj", "{05D24C4C-2FB4-4555-9BD8-28B741B42650}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07ABAF4B-4840-4DB0-99A0-1516365640AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07ABAF4B-4840-4DB0-99A0-1516365640AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07ABAF4B-4840-4DB0-99A0-1516365640AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07ABAF4B-4840-4DB0-99A0-1516365640AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05D24C4C-2FB4-4555-9BD8-28B741B42650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05D24C4C-2FB4-4555-9BD8-28B741B42650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05D24C4C-2FB4-4555-9BD8-28B741B42650}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{05D24C4C-2FB4-4555-9BD8-28B741B42650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05D24C4C-2FB4-4555-9BD8-28B741B42650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05D24C4C-2FB4-4555-9BD8-28B741B42650}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
