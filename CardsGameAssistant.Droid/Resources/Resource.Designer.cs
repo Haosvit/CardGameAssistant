@@ -102,11 +102,20 @@ namespace CardsGameAssistant.Droid
 		public partial class Dimension
 		{
 			
+			// aapt resource value: 0x7f070003
+			public const int BigTextSize = 2131165187;
+			
+			// aapt resource value: 0x7f070004
+			public const int BiggerTextSize = 2131165188;
+			
 			// aapt resource value: 0x7f070001
 			public const int DefaultTextViewMargin = 2131165185;
 			
 			// aapt resource value: 0x7f070000
 			public const int SmallButtonHeight = 2131165184;
+			
+			// aapt resource value: 0x7f070002
+			public const int SmallTextSize = 2131165186;
 			
 			static Dimension()
 			{
@@ -227,6 +236,12 @@ namespace CardsGameAssistant.Droid
 			
 			// aapt resource value: 0x7f080001
 			public const int DefaultSmallText = 2131230721;
+			
+			// aapt resource value: 0x7f080002
+			public const int PlayerNameTextStyle = 2131230722;
+			
+			// aapt resource value: 0x7f080003
+			public const int ResultTextStyle = 2131230723;
 			
 			// aapt resource value: 0x7f080000
 			public const int Theme_Splash = 2131230720;

@@ -41,9 +41,7 @@ namespace CardsGameAssistant.Droid.Views
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.home_view);
             SetTitle(Resource.String.ApplicationName);
-           CreateBinding();
-
-           MvxListView
+            CreateBinding();
             _matchesListView = (MvxListView)FindViewById(Resource.Id.lv_matches);
 
         }

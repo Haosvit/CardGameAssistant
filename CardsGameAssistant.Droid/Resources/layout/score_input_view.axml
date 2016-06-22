@@ -12,47 +12,4 @@
         android:selectAllOnFocus="true"
         android:inputType="numberDecimal|numberSigned"
         local:MvxBind="Text Score" />
-<!--<LinearLayout
-        android:id="@+id/textScore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        local:MvxBind="Visibility IsEditting, Converter=NotBoolToVisibility">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:selectAllOnFocus="true"
-            android:layout_margin="8dp"
-            local:MvxBind="Text Score"
-            android:background="@android:color/transparent" />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/inputScore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        local:MvxBind="Visibility IsEditting, Converter=BoolToVisibility">
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton1"
-            android:src="@drawable/up_arrow"
-            android:background="@android:color/transparent"
-            local:MvxBind="Click UpButtonCommand" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:selectAllOnFocus="true"
-            local:MvxBind="Text Score"
-            android:background="@android:color/transparent" />
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton2"
-            android:src="@drawable/down_arrow"
-            android:background="@android:color/transparent"
-            local:MvxBind="Click DownButtonCommand" />
-    </LinearLayout>-->
 </LinearLayout>

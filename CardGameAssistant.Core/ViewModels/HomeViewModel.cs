@@ -90,6 +90,8 @@ namespace CardGameAssistant.Core.ViewModels
             Players = new List<string>();
             Players.Add("Hảo");
             Players.Add("Lì");
+            Players.Add("Chu");
+            Players.Add("Chu Lỳ");
             Totals = new List<int>();
             InitCommandMethods();
             MatchScoresItemViewModels = new ObservableCollection<MatchScoresItemViewModel>();
@@ -104,6 +106,7 @@ namespace CardGameAssistant.Core.ViewModels
 
         private void OnFinishCommand()
         {
+            CalculateTotals();
             IsFinish = !_isFinish;
             if (IsFinish) {
                
@@ -148,14 +151,19 @@ namespace CardGameAssistant.Core.ViewModels
 
         void OnScoresChanged(object sender, System.EventArgs e)
         {
+            CalculateTotals();
+        }
+
+        private void CalculateTotals()
+        {
             int[] tTotals = new int[4];
-           
+
             foreach (var match in MatchScoresItemViewModels)
             {
                 var tTotal = 0;
                 for (var i = 0; i < 4; i++)
                 {
-                    tTotals[i] += match.ScoreInputItems[i].Score;                    
+                    tTotals[i] += match.ScoreInputItems[i].Score;
                 }
             }
             Totals = new List<int>(tTotals);

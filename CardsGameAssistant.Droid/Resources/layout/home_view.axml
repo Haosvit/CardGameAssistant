@@ -11,25 +11,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+    <!-- placeholder -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
         <EditText
+            style="@style/PlayerNameTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             local:MvxBind="Text Players[0]" />
         <EditText
+            style="@style/PlayerNameTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             local:MvxBind="Text Players[1]" />
         <EditText
+            style="@style/PlayerNameTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             local:MvxBind="Text Players[2]" />
         <EditText
+            style="@style/PlayerNameTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             local:MvxBind="Text Players[3]" />
     </LinearLayout>
 <!-- Total scores -->
@@ -37,30 +46,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="#444444"
         local:MvxBind="Visibility IsFinish, Converter=BoolToVisibility">
+    <!-- placeholder -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
         <TextView
+            style="@style/ResultTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
+            android:layout_weight="2"
             local:MvxBind="Text Totals[0]" />
         <TextView
+          style="@style/ResultTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
+            android:layout_weight="2"
             local:MvxBind="Text Totals[1]" />
         <TextView
+          style="@style/ResultTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
+            android:layout_weight="2"
             local:MvxBind="Text Totals[2]" />
         <TextView
+          style="@style/ResultTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
+            android:layout_weight="2"
             local:MvxBind="Text Totals[3]" />
     </LinearLayout>
 <!-- Commands -->

@@ -2,5 +2,19 @@
 <resources>
   <style name="DefaultSmallText">
     <item name="android:color">@color/White</item>
+    <item name="android:textSize">@dimen/SmallTextSize</item>
+  </style>
+
+  <style name="PlayerNameTextStyle">
+    <item name="android:color">@color/White</item>
+    <item name="android:textSize">@dimen/BiggerTextSize</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="ResultTextStyle">
+    <item name="android:color">@color/White</item>
+    <item name="android:textSize">@dimen/BigTextSize</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:gravity">center</item>
   </style>
 </resources>
