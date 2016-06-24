@@ -24,6 +24,14 @@ namespace CardGameAssistant.Core.ViewModels
             set { _isFinish = value; RaisePropertyChanged(() => IsFinish); }
         }
 
+
+        private bool _isFocusChanged;
+        public bool IsFocusChanged
+        {
+            get { return _isFocusChanged; }
+            set { _isFocusChanged = value; RaisePropertyChanged("IsFocusChanged"); }
+        }        
+
         public string AppName { get { return "CARDS GAME ASSISTANT"; } }
 
         private string _finishOrNewGame;
@@ -31,22 +39,12 @@ namespace CardGameAssistant.Core.ViewModels
 
         public List<string> Players { get; set; }
 
-        //private List<int> _totals;
-        //public List<int> Totals
-        //{
-        //    get { return _totals; }
-        //    set { _totals = value; RaisePropertyChanged("Totals"); }
-        //}
-
-
         private List<int> _totals;
         public List<int> Totals
         {
             get { return _totals; }
             set { _totals = value; RaisePropertyChanged("Totals"); }
         }
-
-
 
         private ObservableCollection<MatchScoresItemViewModel> _matchScoresItemViewModels; 
         public ObservableCollection<MatchScoresItemViewModel> MatchScoresItemViewModels 
@@ -88,10 +86,6 @@ namespace CardGameAssistant.Core.ViewModels
             FinishOrNewGame = "FINISH";
             IsFinish = false;
             Players = new List<string>();
-            Players.Add("Hảo");
-            Players.Add("Lì");
-            Players.Add("Chu");
-            Players.Add("Chu Lỳ");
             Totals = new List<int>();
             InitCommandMethods();
             MatchScoresItemViewModels = new ObservableCollection<MatchScoresItemViewModel>();
@@ -137,6 +131,7 @@ namespace CardGameAssistant.Core.ViewModels
             var matches = MatchScoresItemViewModels;
             var newMatch = new MatchScoresItemViewModel(++_matchNumber);
             newMatch.ScoresChanged += OnScoresChanged;
+            newMatch.FocusChanged += OnFocusChanged;
             matches.Add(newMatch);
 
             HasItemAdded = true;
@@ -147,6 +142,11 @@ namespace CardGameAssistant.Core.ViewModels
                 MatchScoresItemViewModel.Current.IsEditting = false;
             }
             MatchScoresItemViewModel.Current = newMatch;
+        }
+
+        private void OnFocusChanged(object sender, System.EventArgs e)
+        {
+            IsFocusChanged = true;
         }
 
         void OnScoresChanged(object sender, System.EventArgs e)

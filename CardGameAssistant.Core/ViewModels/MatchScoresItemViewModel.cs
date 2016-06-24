@@ -16,6 +16,7 @@ namespace CardGameAssistant.Core.ViewModels
 
         public event EventHandler ScoresChanged;
         public event EventHandler<EdittingStateEventArg> EdittingStateChanged;
+        public event EventHandler FocusChanged;
         private const byte NUM_OF_PLAYERS = 4;
         private const byte DEFAULT_SCORE = 0;
         #region Properties
@@ -68,6 +69,10 @@ namespace CardGameAssistant.Core.ViewModels
         private void OnItemClickCommand()
         {
             UpdateCurrent();
+            if (FocusChanged != null)
+            {
+                FocusChanged(this, System.EventArgs.Empty);
+            }
         }
 
         private void UpdateCurrent()

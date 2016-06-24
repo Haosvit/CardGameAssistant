@@ -13,6 +13,7 @@ using MvvmCross.Droid.Views;
 using MvvmCross.Binding.Droid.Views;
 using MvvmCross.Binding.BindingContext;
 using CardGameAssistant.Core.ViewModels;
+using Android.Views.InputMethods;
 
 namespace CardsGameAssistant.Droid.Views
 {
@@ -22,6 +23,7 @@ namespace CardsGameAssistant.Droid.Views
 
         private MvxListView _matchesListView;
 
+        private View _currentFocusView;
         private bool _hasItemAdded;
         public bool HasItemAdded 
         {
@@ -34,6 +36,30 @@ namespace CardsGameAssistant.Droid.Views
                     RollListToBottom();
                 }
             } 
+        }
+
+        private bool _isFocusChanged;
+        public bool IsFocusChanged
+        {
+            get { return _isFocusChanged; }
+            set 
+            {
+                _isFocusChanged = value;
+                if (value)
+                {
+                    _currentFocusView = CurrentFocus;
+                    _currentFocusView.FocusChange += OnFocusChanged;
+                }
+            }
+        }
+
+        private void OnFocusChanged(object sender, View.FocusChangeEventArgs e)
+        {
+            if (!e.HasFocus)
+            {
+                _currentFocusView.RequestFocus();
+                _currentFocusView.FocusChange -= OnFocusChanged;
+            }
         }
 
         protected override void OnCreate(Bundle bundle)
@@ -50,13 +76,14 @@ namespace CardsGameAssistant.Droid.Views
         {
             var set = this.CreateBindingSet<HomeView, HomeViewModel>();
             set.Bind().For(v => v.HasItemAdded).To(vm => vm.HasItemAdded);
+            set.Bind().For(v => v.IsFocusChanged).To(vm => vm.IsFocusChanged);
             set.Apply();
         }
-
 
         private void RollListToBottom()
         {
             _matchesListView.SmoothScrollToPosition(_matchesListView.Count);
         }
+
     }
 }
